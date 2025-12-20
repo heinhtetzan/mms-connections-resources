@@ -1,0 +1,847 @@
+{
+  "info": {
+    "_postman_id": "ee5918df-827f-4372-8224-11274ae2bda2",
+    "name": "App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "dashboard",
+      "item": [
+        {
+          "name": "products",
+          "item": [
+            {
+              "name": "index",
+              "id": "26de77e7-f7a4-49cb-a92e-1ee1089dd3dd",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/products?limit=3",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "500",
+                      "description": "search from 'name' and 'price' columns ",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort_by",
+                      "value": "price",
+                      "description": "sort using 'name' and 'price' columns ",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort_direction",
+                      "value": "asc",
+                      "description": "asc, desc",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "3",
+                      "description": "limit data result"
+                    },
+                    {
+                      "key": "page",
+                      "value": "2",
+                      "description": "page for pagination",
+                      "disabled": true
+                    },
+                    {
+                      "key": "price_min",
+                      "value": "500",
+                      "description": "show product that start from price_min",
+                      "disabled": true
+                    },
+                    {
+                      "key": "price_max",
+                      "value": "800",
+                      "description": "show product that start from price_max",
+                      "disabled": true
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "show",
+              "id": "5edf1304-a1b4-4928-be39-80c7524b43dc",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/products/24",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products",
+                    "24"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "update",
+              "id": "3b4c7240-2e47-40bf-8058-43173417223b",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"product_name\" : \"mango\",\n    \"price\" : 1200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/products/24",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products",
+                    "24"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "update-name",
+              "id": "f6768bc5-80fc-45fd-bc0d-123e86b91574",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"product_name\" : \"orange juice\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/products/24",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products",
+                    "24"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "update-price",
+              "id": "d170c5f0-e824-451d-ade1-dd8406b56bcf",
+              "request": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"price\" : 700\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/products/24",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products",
+                    "24"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "update-image",
+              "id": "50efdf86-5fa6-44c6-a2c1-c1b407e23aa7",
+              "request": {
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"image\" : \"hello.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/products/20",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products",
+                    "20"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "destroy",
+              "id": "3cfba252-a173-42bc-a5da-18c13d459346",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/products/23",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products",
+                    "23"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "store",
+              "id": "07491d7a-ae85-422b-b880-e2b4d813c244",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"product_name\": \"mango juice 4\",\n    \"price\" : 300\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/products",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              }
+            }
+          ],
+          "id": "213134d3-0942-4d3e-875e-20527449f66c"
+        },
+        {
+          "name": "media",
+          "item": [
+            {
+              "name": "store",
+              "id": "affb476a-e883-408f-a6e9-aa536b07b47c",
+              "request": {
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": [
+                        "/Users/hhz/Desktop/assets/images/mid-photo/442481039_776706527981469_898912317739874544_n.jpg"
+                      ]
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/media",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "media"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "destroy",
+              "id": "6946cb65-bea8-4f70-a135-700506e45685",
+              "request": {
+                "method": "DELETE",
+                "body": {
+                  "mode": "formdata"
+                },
+                "url": {
+                  "raw": "{{base_url}}/media/2JjtnkpmVwdj7WtEYtwJ4jgvqTfM5f3qtov0PAi2.jpg",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "media",
+                    "2JjtnkpmVwdj7WtEYtwJ4jgvqTfM5f3qtov0PAi2.jpg"
+                  ]
+                }
+              }
+            }
+          ],
+          "id": "644d387c-ac68-4f8a-bbc6-da36f195a5d3"
+        },
+        {
+          "name": "vouchers",
+          "item": [
+            {
+              "name": "index",
+              "id": "8ec3abb3-ae56-47c8-b523-19aff37946d6",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/vouchers",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "vouchers"
+                  ],
+                  "query": [
+                    {
+                      "key": "sort_by",
+                      "value": "total",
+                      "disabled": true
+                    },
+                    {
+                      "key": "sort_direction",
+                      "value": "asc",
+                      "disabled": true
+                    },
+                    {
+                      "key": "q",
+                      "value": "zaw",
+                      "disabled": true
+                    },
+                    {
+                      "key": "limit",
+                      "value": "100",
+                      "disabled": true
+                    },
+                    {
+                      "key": "page",
+                      "value": "2",
+                      "disabled": true
+                    },
+                    {
+                      "key": "min_net_total",
+                      "value": "15000",
+                      "disabled": true
+                    },
+                    {
+                      "key": "max_net_total",
+                      "value": "20000",
+                      "disabled": true
+                    },
+                    {
+                      "key": "net_total_between",
+                      "value": "16000,22000",
+                      "disabled": true
+                    },
+                    {
+                      "key": "start_date",
+                      "value": "2024-10-12",
+                      "disabled": true
+                    },
+                    {
+                      "key": "end_date",
+                      "value": "2024-10-12",
+                      "disabled": true
+                    },
+                    {
+                      "key": "date_between",
+                      "value": "2024-10-12,2024-10-14",
+                      "disabled": true
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "name": "show",
+              "id": "031bfacf-a369-4bfa-9823-93a5c22047e4",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/vouchers/2",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "vouchers",
+                    "2"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "destroy",
+              "id": "dad72c4a-5789-42ec-84e8-ed2696d842c0",
+              "request": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/vouchers/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "vouchers",
+                    "1"
+                  ]
+                }
+              }
+            }
+          ],
+          "id": "1efab29d-1514-4ba0-aa16-c427322fb19e"
+        },
+        {
+          "name": "sale",
+          "item": [
+            {
+              "name": "store",
+              "id": "92c545b7-dba0-46ba-b2aa-647b69af3a47",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"voucher_id\": \"INV-2029-1879\",\n    \"customer_name\": \"kyaw kayw\",\n    \"customer_email\": \"kyaw@gmail.com\",\n    \"sale_date\": \"2024-09-29\",\n    \"records\": [\n        {\n            \"product_id\": 5,\n            \"quantity\": \"3\",\n            \"created_at\": \"2024-09-29T13:58:06.505Z\"\n        },\n        {\n            \"product_id\": 2,\n            \"quantity\": \"3\",\n            \"created_at\": \"2024-09-29T13:58:06.505Z\"\n        }\n    ],\n    \"total\": 10600,\n    \"tax\": 742.0000000000001,\n    \"net_total\": 11342,\n    \"id\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/vouchers",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "vouchers"
+                  ]
+                }
+              }
+            }
+          ],
+          "id": "83a75ef0-229b-4392-8af2-dd09a71345f0"
+        },
+        {
+          "name": "user-profile",
+          "item": [
+            {
+              "name": "show",
+              "id": "b705a2cf-269d-47fe-bd14-d45368ad80b6",
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/user-profile/show",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "show"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "change-password",
+              "id": "be362617-e94d-40a9-b9b1-bde6933f9494",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "old_password",
+                      "value": "asdffdsa",
+                      "type": "text"
+                    },
+                    {
+                      "key": "new_password",
+                      "value": "aassddff",
+                      "type": "text"
+                    },
+                    {
+                      "key": "new_password_confirmation",
+                      "value": "aassddff",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/user-profile/change-password",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "change-password"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "change-name",
+              "id": "63966bbc-e553-4d27-b4e5-9bfdda7f6790",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "kyaw kyaw",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/user-profile/change-name",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "change-name"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "change-profile-image",
+              "id": "ca71a007-31ca-4dee-99f5-000e2acf074a",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"profile_image\" : \"6IFHvvev0FDNzwJCOhtZ9LL4u56SC0uI5klDU9Zw.png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/user-profile/change-profile-image",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "change-profile-image"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "logout",
+              "id": "97d77b9a-1a04-4cf8-aada-2808ec234070",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/user-profile/logout",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "user-profile",
+                    "logout"
+                  ]
+                }
+              }
+            }
+          ],
+          "id": "2f815e8d-abcf-46f6-a001-1ca6d5d6ea0e"
+        },
+        {
+          "name": "records",
+          "item": [
+            {
+              "name": "index",
+              "id": "fd60bcca-9893-49fa-a3da-e9384d9398d6",
+              "request": {
+                "method": "GET",
+                "url": {
+                  "raw": "{{base_url}}/records",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "records"
+                  ],
+                  "query": [
+                    {
+                      "key": "voucher_id",
+                      "value": "1",
+                      "disabled": true
+                    },
+                    {
+                      "key": "product_id",
+                      "value": "1",
+                      "disabled": true
+                    },
+                    {
+                      "key": "min_quantity",
+                      "value": "5",
+                      "disabled": true
+                    },
+                    {
+                      "key": "max_quantity",
+                      "value": "2",
+                      "disabled": true
+                    },
+                    {
+                      "key": "min_cost",
+                      "value": "12000",
+                      "disabled": true
+                    },
+                    {
+                      "key": "max_cost",
+                      "value": "10000",
+                      "disabled": true
+                    },
+                    {
+                      "key": "date_from",
+                      "value": "2024-07-22",
+                      "disabled": true
+                    },
+                    {
+                      "key": "date_to",
+                      "value": "2024-07-22",
+                      "disabled": true
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "id": "3de94c93-3ee2-49d7-85b4-f94395a5fd27"
+        }
+      ],
+      "id": "1b6492c5-cba7-46f1-95d4-f161fe7ecd71"
+    },
+    {
+      "name": "index",
+      "id": "cf308e64-db0e-44c2-9ddf-714132b541b1",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{base_url}}",
+          "host": [
+            "{{base_url}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "register",
+      "id": "a7f56968-53dc-4f19-bf02-ac79a3dedccd",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\" : \"zaw\",\n    \"email\" : \"zaw@gmail.com\",\n    \"password\" : \"asdffdsa\",\n    \"password_confirmation\" : \"asdffdsa\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/register",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "login",
+      "id": "df631399-6cda-41cf-b6bc-a85af1a5d962",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\" : \"admin@gmail.com\",\n    \"password\" : \"asdffdsa\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/login",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "login"
+          ]
+        }
+      }
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{auth_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "id": "62da7b23-e746-40d3-996e-5b94b1f9e32a",
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "id": "48971906-e480-414e-98e1-2f8f3fadc4e1",
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "id": "902e7780-6b70-4c21-89a6-2347dcd53e9e",
+      "key": "auth_token",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+services : 
+  web : 
+    image: nginx:alpine
+    container_name : 01-static-compose
+    volumes : 
+      - ./web:/usr/share/nginx/html
+    ports:
+      - "9000:80"
